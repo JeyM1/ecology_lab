@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Lab4</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/styles/styles.css">
+        
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600,900" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome!</h1>
+            <form action="javascript:getInputValue();" name="form_name">
+                <input name="input" type="text" placeholder="input" id="input" required>
+                <button type="submit">Go!</button>
+            </form>
+        </div>
+
+        <div class="result" id="out_div" hidden>
+            <p id="out"></p>
+        </div>
+        <script src="/scripts/main_calculate.js"></script>
+    </body>
+</html>
