@@ -13,10 +13,15 @@
     <body>
         <div class="container">
             <h1>Welcome!</h1>
-            <!-- TODO: Welcome page (using bootstrap: yes) -->
+            <form action="javascript:getInputValue();" name="form_name">
+                <input name="input" type="text" placeholder="input" id="input" required>
+                <button type="submit">Go!</button>
+            </form>
         </div>
-        
-        <!-- Main script -->
+
+        <div class="result" id="out_div" hidden>
+            <p id="out"></p>
+        </div>
         <script src="/scripts/main_calculate.js"></script>
     </body>
 </html>
