@@ -30,8 +30,33 @@
                     Станція під'єднана до газово-транспортної системи України. Також паливне господарство
                     має ємності для використання як палива мазуту.</h5>
             </div>
-            <!-- Test form: make others like this + styles-->
-            <a href="test_form.html">Діоксид сірки SO<sub>2</sub></a>
+
+            <hr>
+            <h1>MAIN CALCULATOR</h1>
+            <!-- TEST SECTION: dynamic form -->
+            <form name="calculator_type" class="row justify-content-center align-items-center calc_choice">
+                <p>Виберіть, що обрахувати:</p>
+                <select name="choice" class="form-control form-control-lg col-sm-6">
+                    <option value="empty" hidden disabled selected value>-- тип обчислення --</option>
+                    <option value="SO2">Діоксид сірки SO<sub>2</sub></option>
+                    <option value="SSP">SSP</option>
+                </select>
+            </form>
+
+            <form id="calculator_SO2" hidden>
+                SO2
+                
+            </form>
+
+            <form id="calculator_SSP" hidden>
+                SSP
+                
+            </form>
+
+            <!-- Use this for output only -->
+            <div class="output">
+
+            </div>
         </div>
 
         <!-- Main script -->

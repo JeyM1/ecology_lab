@@ -1,10 +1,27 @@
+// on document ready
+document.addEventListener("DOMContentLoaded", function(event) { 
+    var forms = [0, document.getElementById("calculator_SO2"), document.getElementById("calculator_SSP")];
+    var calculatorSelect = calculator_type.choice;
+    var prev_index = 0;
+    function changeOption(){
+        // var selectedOption = calculatorSelect.options[calculatorSelect.selectedIndex];
+        console.log(calculatorSelect.selectedIndex);
+        var new_index = calculatorSelect.selectedIndex;
+        forms[prev_index].hidden = true;
+        forms[new_index].hidden = false;
+        prev_index = new_index;
+    }
+    calculatorSelect.addEventListener("change", changeOption);
+  });
+
+
 function getInputValue(){
     // Selecting the input element and get its value 
     var inputVal = document.form_name.input.value;
     
     // Displaying the value
-    Bi = 1096363;
-    Qri = 20.47;
+    var Bi = 1096363;
+    var Qri = 20.47;
     // test for SO2
     /*Bi = 1096363;
     Qri = 20.47;
@@ -32,3 +49,5 @@ function getKSulfurDioxideSO2(Qri, Sr, n1, n2, Beta) {
 function getKSuspendedSolidParticles(Qri, a, Ar, G, n, k_emission) {
     return (Math.pow(10, 6) / Qri) * a * (Ar / (100 - G)) * (1 - n) + k_emission;
 }
+
+
