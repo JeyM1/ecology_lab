@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         // var selectedOption = calculatorSelect.options[calculatorSelect.selectedIndex];
         console.log(calculatorSelect.selectedIndex);
         var new_index = calculatorSelect.selectedIndex;
-        forms[prev_index].hidden = true;
-        forms[new_index].hidden = false;
+        forms[prev_index].fadeOut(function () { forms[new_index].fadeIn(); });
         prev_index = new_index;
     }
     calculatorSelect.addEventListener("change", changeOption);
