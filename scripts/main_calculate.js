@@ -1,18 +1,31 @@
 // on document ready
-document.addEventListener("DOMContentLoaded", function(event) { 
-    var forms = [0, $("#calculator_SO2"), $("#calculator_SSP")];
+$( document ).ready(function() {
+    var forms = [$(0), $("#calculator_SO2"), $("#calculator_SSP")];
+    forms.forEach(element => {
+        element.hide();
+    });
+    var info_blocks = $(".information");
+    /*info_blocks.forEach(element => {
+        element.hide();
+    });*/
+    info_blocks.hide();
+
     var calculatorSelect = calculator_type.choice;
-    var prev_index = 0;
+    var prev_index = 1;
     function changeOption(){
-        // var selectedOption = calculatorSelect.options[calculatorSelect.selectedIndex];
-        console.log(calculatorSelect.selectedIndex);
         var new_index = calculatorSelect.selectedIndex;
-        forms[prev_index].fadeOut(function () { forms[new_index].fadeIn(); });
+        //forms[prev_index].slideUp(500, "linear", function () { forms[new_index].slideDown(500); });
+        forms[prev_index].fadeOut(500, "linear", function () { forms[new_index].fadeIn(500); });
+        
+        //$("#calculator_SO2").fadeToggle();
         prev_index = new_index;
     }
     calculatorSelect.addEventListener("change", changeOption);
   });
 
+function toggle_info_box() {
+    $(".information").slideToggle();
+}
 
 function getInputValue(){
     // Selecting the input element and get its value 
