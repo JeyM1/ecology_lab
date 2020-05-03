@@ -19,7 +19,7 @@ head {
 .button-information {
   display: block!important;
   margin: 30px auto;
-  padding: 0 20px;
+  padding: 10px 20px!important;
 }
 .output {
   padding: 100px 0;

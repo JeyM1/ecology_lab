@@ -1,24 +1,17 @@
 // on document ready
 $( document ).ready(function() {
+    $(".information").hide();
+
     var forms = [$(0), $("#calculator_SO2"), $("#calculator_SSP")];
     forms.forEach(element => {
         element.hide();
     });
-    var info_blocks = $(".information");
-    /*info_blocks.forEach(element => {
-        element.hide();
-    });*/
-    info_blocks.hide();
-
+    
     var calculatorSelect = calculator_type.choice;
     var prev_index = 1;
     function changeOption(){
         var new_index = calculatorSelect.selectedIndex;
-        //forms[prev_index].slideUp(500, "linear", function () { forms[new_index].slideDown(500); });
         forms[prev_index].fadeOut(500, "linear", function () { forms[new_index].fadeIn(500); });
-        console.log(forms[new_index]);
-        
-        //$("#calculator_SO2").fadeToggle();
         prev_index = new_index;
     }
     calculatorSelect.addEventListener("change", changeOption);
