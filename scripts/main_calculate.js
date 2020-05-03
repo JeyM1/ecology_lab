@@ -1,6 +1,6 @@
 // on document ready
 document.addEventListener("DOMContentLoaded", function(event) { 
-    var forms = [0, document.getElementById("calculator_SO2"), document.getElementById("calculator_SSP")];
+    var forms = [0, $("#calculator_SO2"), $("#calculator_SSP")];
     var calculatorSelect = calculator_type.choice;
     var prev_index = 0;
     function changeOption(){
