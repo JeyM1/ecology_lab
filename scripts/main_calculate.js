@@ -16,6 +16,7 @@ $( document ).ready(function() {
         var new_index = calculatorSelect.selectedIndex;
         //forms[prev_index].slideUp(500, "linear", function () { forms[new_index].slideDown(500); });
         forms[prev_index].fadeOut(500, "linear", function () { forms[new_index].fadeIn(500); });
+        console.log(forms[new_index]);
         
         //$("#calculator_SO2").fadeToggle();
         prev_index = new_index;
