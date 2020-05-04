@@ -5,11 +5,11 @@
         <title>Lab4</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/styles/styles.css">
+        <link rel="stylesheet" href="styles/styles.css">
         
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600,900" rel="stylesheet">
-        <link rel="stylesheet" href="/static/bootstrap/bootstrap.min.css">
-        <script src="/static/jquery-3.5.0.min.js"></script>
+        <link rel="stylesheet" href="static/bootstrap/bootstrap.min.css">
+        <script src="static/jquery-3.5.0.min.js"></script>
     </head>
     <body>
         <div class="container text-center">
@@ -64,17 +64,17 @@
                         Димові гази можуть бути очищені від оксидів сірки в сіркоочисних установках шляхом застосування технологій
                         десульфуризації димових газів з різною ефективністю очищення n<sub>2</sub>. Коефіцієнт роботи сіркоочисної
                         установки B визначається як відношення часу роботи сіркоочисної установки до часу роботи енергетичної
-                        установки. Для розрахунків необхідно використовувати значення h<sub>2</sub>, одержане під час останнього
+                        установки. Для розрахунків необхідно використовувати значення n<sub>2</sub>, одержане під час останнього
                         випробування сіркоочисної установки, і значення B, одержане при аналізі даних про роботу очисної та
                         енергетичної установок у цілому. За відсутності таких даних значення ефективності сіркоочищення димових
                         газів та коефіцієнта роботи сіркоочисної установки за різними технологіями десульфуризації приймаються
                         згідно з таблицею Д.3 (додаток Д ).<br>
                         До установок десульфуризації димових газів відносяться і деякі види золоуловлювальних установок. Для
-                        електростатичних фільтрів та циклонів ефективність уловлення оксидів сірки h<sub>2</sub> є незначною і
+                        електростатичних фільтрів та циклонів ефективність уловлення оксидів сірки n<sub>2</sub> є незначною і
                         дорівнює нулю. Для мокрих золоуловлювальних установок (мокрих скруберів типу МС та МВ) величина
-                        n<sub>2</sub> залежить від загальної лужності води на зрошення та від вмісту сірки в паливі S<sub>'</sub>.
+                        n<sub>2</sub> залежить від загальної лужності води на зрошення та від вмісту сірки в паливі S<sup>'</sup>.
                         Приведений вміст сірки визначається як відношення масового вмісту сірки на робочу масу палива до нижчої
-                        робочої теплоти згоряння палива (S<sub>'</sub>= S<sub>r</sub>/>Q<sub>i</sub><sup>r</sup>). Дані про
+                        робочої теплоти згоряння палива (S<sup>'</sup>= S<sub>r</sub>>Q<sub>i</sub><sup>r</sup>). Дані про
                         ефективність уловлення оксидів сірки в мокрих скруберах наведено в таблиці Д.4 (додаток Д ).<br><br>
                     </h5>
             
@@ -84,13 +84,13 @@
                     </h5>
                     <img src="img/SO2.JPG">
                     <h5>Ефективність зв'язування оксидів сірки золою або сорбентом у енергетичній
-                        установці h<sub>1</sub> становить 0,05. Сіркоочисна установка
-                        відсутня, тому ефективність h<sub>2</sub> та коефіцієнт роботи B дорівнюють нулю.
+                        установці n<sub>1</sub> становить 0,05. Сіркоочисна установка
+                        відсутня, тому ефективність n<sub>2</sub> та коефіцієнт роботи B дорівнюють нулю.
                     </h5>
                     <hr>
                 </div>
                 <h5>E – валовий викид забруднювальної речовини під час спалювання палива за проміжок часу P, т<br>
-                    k – показник емісії забруднювальної речовини для палива, г/ГДж</h4>
+                    k – показник емісії забруднювальної речовини для палива, г/ГДж</h5>
         
                 <h5>
                     Показник емісії k г/ГДж, оксидів сірки SO<sub>2</sub> та SO<sub>3</sub>, у перерахунку на діоксид сірки
@@ -106,22 +106,22 @@
                 </h5>
                 
                 <p><i>Введіть B<sub>i</sub> (витрата i-го палива за проміжок часу P, т):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_B_i" type="text" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_B_i" type="text" value="1096363" required>
         
                 <p><i>Введіть Q<sub>i</sub><sup>r</sup> (нижча робоча теплота згоряння i-го палива, МДж/кг):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_Q" type="text" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_Q" type="text" value="20.47" required>
         
                 <p><i>Введіть S<sup>r</sup> (вмiст сiрки в паливi на робочу масу за промiжок часу P, %):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_S" type="text" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_S" type="text" value="2.4" required>
         
                 <p><i>Введіть n<sub>1</sub> (ефективнiсть зв'язування сiрки з золою):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_n1" type="text" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_n1" type="text" value="0.05" required>
         
                 <p><i>Введіть n<sub>2</sub> (ефективнiсть очистки димових газiв вiд оксидiв сiрки):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_n2" type="text" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_n2" type="text" value="0" required>
         
                 <p><i>Введіть B (коефiцiент роботи сiркоочисноi установки ):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_B" type="text" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_B" type="text" value="1" required>
         
                 <input type="submit" class="btn btn-primary btn-lg calculate" value="Порахувати">
             </form>
@@ -132,7 +132,7 @@
                 <button class="btn btn-outline-info button-information" type="button" onclick="toggle_info_box();">Інформація</button>
                 <div class="information">
                     <h5>
-                        Вміст золи A<sup>r</sup> в паливі та горючих у викиді твердих частинок вин визначаються при проведенні
+                        Вміст золи A<sup>r</sup> в паливі та горючих у викиді твердих частинок Г<sub>вин</sub> визначаються при проведенні
                         технічного аналізу за ГОСТ 11022-95 (ISO 1171-81) палива і леткої золи, яка виходить з енергетичної
                         установки, відповідно.<br>
                         Зола палива виходить з енергетичної установки у вигляді леткої золи (виносу) та або донної золи (шлаку).
@@ -188,25 +188,25 @@
                 </h5>
         
                 <p><i>Введіть B<sub>i</sub> (витрата i-го палива за проміжок часу P, т):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_B_i" type="text" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_B_i" type="text" value="1096363" required>
         
                 <p><i>Введіть Q<sub>i</sub><sup>r</sup> (нижча робоча теплота згоряння i-го палива, МДж/кг):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_Q" type="text" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_Q" type="text" value="20.47" required>
         
                 <p><i>Введіть а<sub>вин</sub> (частка золи, яка виходить з котла у виглядi легкоi золи):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_a" type="text" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_a" type="text" value="0.8" required>
         
                 <p><i>Введіть A<sup>r</sup> (масовий вмiст золи в паливi на робочу масу, %):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_Ar" type="text" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_Ar" type="text" value="25.20" required>
         
                 <p><i>Введіть Г<sup>вин</sup> (масовий вмiст горючих речовин у викидах т.ч., %):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_g" type="text" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_g" type="text" value="1.5" required>
         
                 <p><i>Введіть n<sub>зу</sub> (ефективнiсть очищення димових газiв вiд т.ч.):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_n" type="text" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_n" type="text" value="0.985" required>
         
                 <p><i>Введіть k<sub>теS</sub> (показник емiсii твердих продуктiв , г/ГДж):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_k" type="text" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_k" type="text" value="0" required>
         
                 <input type="submit" class="btn btn-primary btn-lg calculate" value="Порахувати">
             </form>
@@ -218,6 +218,6 @@
         </div>
 
         <!-- Main script -->
-        <script src="/scripts/main_calculate.js"></script>
+        <script src="scripts/main_calculate.js"></script>
     </body>
 </html>
