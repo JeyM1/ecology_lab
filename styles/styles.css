@@ -22,7 +22,17 @@ head {
   padding: 10px 20px!important;
 }
 .output {
-  padding: 100px 0;
+  margin: 50px auto;
+  padding: 25px 0;
   text-align: left;
-  background-color: #d4d4d4;
+  border-radius: 20px;
+  background-color: #BDD7EE;
 }
+.output h4 {
+  text-align: center;
+}
+.main_calculator {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+/*# sourceMappingURL=styles.css.map */

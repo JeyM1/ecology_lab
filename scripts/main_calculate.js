@@ -31,7 +31,7 @@ function parseSO2() {
                                 form.input_n2.value, form.input_B.value);
     var E = getEmission(k, Q, B_i);
 
-    output_block.html("<p>E = " + E + "</p><p>k = " + k + "</p>");
+    output_block.html("<h4>Результат:</h4><h5>E = " + E + "</h5><h5>k = " + k + "</h5>");
 }
 
 function parseSSP() {
@@ -42,7 +42,7 @@ function parseSSP() {
                                 form.input_g.value, form.input_n.value, form.input_k.value);
     var E = getEmission(k, Q, B_i);
 
-    output_block.html("<p>E = " + E + "</p><p>k = " + k + "</p>");
+    output_block.html("<h4>Результат:</h4><h5>E = " + E + "</h5><h5>k = " + k + "</h5>");
 }
 
 function getEmission(c, Qri, B) {
