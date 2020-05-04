@@ -34,7 +34,7 @@
 
             <hr>
             <h1>MAIN CALCULATOR</h1>
-            <!-- TEST SECTION: dynamic form -->
+            <!-- Calculator type switch -->
             <form name="calculator_type" class="row justify-content-center align-items-center calc_choice">
                 <p>Виберіть, що обрахувати:</p>
                 <select name="choice" class="form-control form-control-lg col-sm-6">
@@ -44,7 +44,8 @@
                 </select>
             </form>
 
-            <form id="calculator_SO2" name="form_SO2" class="position-relative text-left">
+            <!-- Calculator of SO2 -->
+            <form id="calculator_SO2" name="form_SO2" class="position-relative text-left" action="javascript:parseSO2();">
                 <h1 class="text-center">Діоксид сірки SO<sub>2</sub></h1>
                 
                 <button class="btn btn-outline-info button-information" type="button" onclick="toggle_info_box();">Інформація</button>
@@ -89,8 +90,10 @@
                     </h5>
                     <hr>
                 </div>
-                <h5>E – валовий викид забруднювальної речовини під час спалювання палива за проміжок часу P, т<br>
-                    k – показник емісії забруднювальної речовини для палива, г/ГДж</h5>
+                <h5>
+                    E – валовий викид забруднювальної речовини під час спалювання палива за проміжок часу P, т<br>
+                    k – показник емісії забруднювальної речовини для палива, г/ГДж
+                </h5>
         
                 <h5>
                     Показник емісії k г/ГДж, оксидів сірки SO<sub>2</sub> та SO<sub>3</sub>, у перерахунку на діоксид сірки
@@ -106,27 +109,28 @@
                 </h5>
                 
                 <p><i>Введіть B<sub>i</sub> (витрата i-го палива за проміжок часу P, т):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_B_i" type="text" value="1096363" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_B_i" type="number" step="any" value="1096363" required>
         
                 <p><i>Введіть Q<sub>i</sub><sup>r</sup> (нижча робоча теплота згоряння i-го палива, МДж/кг):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_Q" type="text" value="20.47" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_Q" type="number" step="any" value="20.47" required>
         
                 <p><i>Введіть S<sup>r</sup> (вмiст сiрки в паливi на робочу масу за промiжок часу P, %):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_S" type="text" value="2.4" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_S" type="number" step="any" value="2.4" required>
         
                 <p><i>Введіть n<sub>1</sub> (ефективнiсть зв'язування сiрки з золою):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_n1" type="text" value="0.05" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_n1" type="number" step="any" value="0.05" required>
         
                 <p><i>Введіть n<sub>2</sub> (ефективнiсть очистки димових газiв вiд оксидiв сiрки):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_n2" type="text" value="0" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_n2" type="number" step="any" value="0" required>
         
                 <p><i>Введіть B (коефiцiент роботи сiркоочисноi установки ):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_B" type="text" value="1" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_B" type="number" step="any" value="1" required>
         
                 <input type="submit" class="btn btn-primary btn-lg calculate" value="Порахувати">
             </form>
 
-            <form id="calculator_SSP" class="position-relative text-left">
+            <!-- Calculator of Solid Particles -->
+            <form id="calculator_SSP" name="form_SSP" class="position-relative text-left" action="javascript:parseSSP();">
                 <h1 class="text-center">Речовини у вигляді суспендованих твердих частинок</h1>
                 
                 <button class="btn btn-outline-info button-information" type="button" onclick="toggle_info_box();">Інформація</button>
@@ -188,25 +192,25 @@
                 </h5>
         
                 <p><i>Введіть B<sub>i</sub> (витрата i-го палива за проміжок часу P, т):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_B_i" type="text" value="1096363" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_B_i" type="number" step="any" value="1096363" required>
         
                 <p><i>Введіть Q<sub>i</sub><sup>r</sup> (нижча робоча теплота згоряння i-го палива, МДж/кг):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_Q" type="text" value="20.47" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_Q" type="number" step="any" value="20.47" required>
         
                 <p><i>Введіть а<sub>вин</sub> (частка золи, яка виходить з котла у виглядi легкоi золи):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_a" type="text" value="0.8" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_a" type="number" step="any" value="0.8" required>
         
                 <p><i>Введіть A<sup>r</sup> (масовий вмiст золи в паливi на робочу масу, %):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_Ar" type="text" value="25.20" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_Ar" type="number" step="any" value="25.20" required>
         
                 <p><i>Введіть Г<sup>вин</sup> (масовий вмiст горючих речовин у викидах т.ч., %):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_g" type="text" value="1.5" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_g" type="number" step="any" value="1.5" required>
         
                 <p><i>Введіть n<sub>зу</sub> (ефективнiсть очищення димових газiв вiд т.ч.):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_n" type="text" value="0.985" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_n" type="number" step="any" value="0.985" required>
         
                 <p><i>Введіть k<sub>теS</sub> (показник емiсii твердих продуктiв , г/ГДж):</i></p>
-                <input class="form-control form-control-lg col-sm-4" id="input_k" type="text" value="0" required>
+                <input class="form-control form-control-lg col-sm-4" id="input_k" type="number" step="any" value="0" required>
         
                 <input type="submit" class="btn btn-primary btn-lg calculate" value="Порахувати">
             </form>

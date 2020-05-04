@@ -1,3 +1,5 @@
+var output_block = $(".output");
+
 // on document ready
 $( document ).ready(function() {
     $(".information").hide();
@@ -21,34 +23,33 @@ function toggle_info_box() {
     $(".information").slideToggle();
 }
 
-function getInputValue(){
-    // Selecting the input element and get its value 
-    var inputVal = document.form_name.input.value;
-    
-    // Displaying the value
-    var Bi = 1096363;
-    var Qri = 20.47;
-    // test for SO2
-    /*Bi = 1096363;
-    Qri = 20.47;
-    Sr = 2.85;
-    n1 = 0.05;
-    n2 = 0;
-    Beta = 1;
+function parseSO2() {
+    var form = document.form_SO2;
+    var B_i = form.input_B_i.value;
+    var Q = form.input_Q.value;
+    var k = getKSulfurDioxide(Q, form.input_S.value, form.input_n1.value, 
+                                form.input_n2.value, form.input_B.value);
+    var E = getEmission(k, Q, B_i);
 
-    document.getElementById("out").innerHTML = "E =  " + getEmission(getKSulfurDioxideSO2(Qri, Sr, n1, n2, Beta), Qri, Bi) + "<br>k = " + getKSulfurDioxideSO2(Qri, Sr, n1, n2, Beta);
-    document.getElementById("out_div").hidden = false;*/
+    output_block.html("<p>E = " + E + "</p><p>k = " + k + "</p>");
+}
 
-    document.getElementById("out").innerHTML = "E =  " + getEmission(getKSuspendedSolidParticles(20.47, 0.8, 25.20, 1.5, 0.985, 0), Qri, Bi) +
-                                                "<br>k = " + getKSuspendedSolidParticles(20.47, 0.8, 25.20, 1.5, 0.985, 0);
-    document.getElementById("out_div").hidden = false;
+function parseSSP() {
+    var form = document.form_SSP;
+    var B_i = form.input_B_i.value;
+    var Q = form.input_Q.value;
+    var k = getKSulfurDioxide(Q, form.input_a.value, form.input_Ar.value, 
+                                form.input_g.value, form.input_n.value, form.input_k.value);
+    var E = getEmission(k, Q, B_i);
+
+    output_block.html("<p>E = " + E + "</p><p>k = " + k + "</p>");
 }
 
 function getEmission(c, Qri, B) {
     return Math.pow(10, -6) * c * Qri * B;
 }
 
-function getKSulfurDioxideSO2(Qri, Sr, n1, n2, Beta) {
+function getKSulfurDioxide(Qri, Sr, n1, n2, Beta) {
     return (Math.pow(10, 6) / Qri) * (0.02 * Sr) * (1 - n1) * (1 - (n2 * Beta));
 }
 

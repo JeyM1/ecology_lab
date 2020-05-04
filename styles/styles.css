@@ -23,4 +23,6 @@ head {
 }
 .output {
   padding: 100px 0;
+  text-align: left;
+  background-color: #d4d4d4;
 }
